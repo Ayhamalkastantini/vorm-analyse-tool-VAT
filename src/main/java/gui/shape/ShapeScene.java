@@ -21,6 +21,12 @@ public class ShapeScene {
     private HashMap<String, TextField> fields;
     private boolean actionButton;
 
+    /**
+     *
+     * @param shapeName
+     * @param fields
+     * @return
+     */
 
     public HashMap<String, Double> newShape(String shapeName,  HashMap<String, String> fields){
         HashMap data = new HashMap();
@@ -99,6 +105,12 @@ public class ShapeScene {
 
     }
 
+    /**
+     *
+     * @param fields
+     * @param data
+     * @return
+     */
     public HashMap<String, Double> editShape(HashMap<String, String> fields,HashMap<String, Double> data){
         HashMap<String, TextField> textFields = new HashMap<>();
         Stage window = new Stage();
@@ -176,6 +188,11 @@ public class ShapeScene {
         return null;
     }
 
+    /**
+     *
+     * @param textFields
+     * @return
+     */
     private HashMap<String, Double> getData(HashMap<String, TextField> textFields) {
         HashMap<String, Double> returnData = new HashMap<>();
 

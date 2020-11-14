@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="vorm-analyse-tool-VAT">
+    <output-path>$PROJECT_DIR$/out/artifacts/vorm_analyse_tool_VAT</output-path>
+    <root id="root">
+      <element id="archive" name="vorm_analyse_tool_VAT.jar">
+        <element id="module-output" name="vorm-analyse-tool-VAT" />
+      </element>
+    </root>
+  </artifact>
+</component>

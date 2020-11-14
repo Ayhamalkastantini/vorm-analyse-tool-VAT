@@ -9,6 +9,11 @@ public class MyShapeService{
 
     private ArrayList<Shape> shapes = new ArrayList<>();
 
+    /**
+     *
+     * @param shapeType
+     * @return
+     */
     public static HashMap<String, String> getFields(String shapeType) {
         switch (shapeType) {
             case "Kubus":
@@ -31,14 +36,26 @@ public class MyShapeService{
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public ArrayList<Shape> getShapes() {
         return this.shapes;
     }
 
+    /**
+     *
+     * @param shapes
+     */
     public void setShapes(ArrayList<Shape> shapes) {
         this.shapes = shapes;
     }
 
+    /**
+     *
+     * @return
+     */
     public double calculateTotalVolume() {
         double totalVolume = 0.0;
 
@@ -51,6 +68,12 @@ public class MyShapeService{
         return totalVolume;
     }
 
+    /**
+     *
+     * @param shapeType
+     * @param data
+     * @return
+     */
     public Shape addShape(String shapeType, HashMap<String, Double> data) {
         Shape newShape;
 
@@ -78,10 +101,19 @@ public class MyShapeService{
         return newShape;
     }
 
+    /**
+     *
+     * @param shape
+     */
     public void addShape(Shape shape) {
         this.shapes.add(shape);
     }
 
+    /**
+     *
+     * @param shape
+     * @param data
+     */
     public void editShape(Shape shape,HashMap<String, Double> data) {
         shape.setShapeData(data);
 

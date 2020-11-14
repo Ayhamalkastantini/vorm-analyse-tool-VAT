@@ -8,6 +8,12 @@ public class Pyramid extends Shape {
     private Double baseLength;
     private Double height;
 
+    /**
+     *
+     * @param baseWidth
+     * @param baseLength
+     * @param height
+     */
     public Pyramid(Double baseWidth, Double baseLength, Double height) {
         this.baseWidth = baseWidth;
         this.baseLength = baseLength;
@@ -19,10 +25,18 @@ public class Pyramid extends Shape {
         super();
     }
 
+    /**
+     *
+     * @return
+     */
     public static Pyramid createInstance() {
         return new Pyramid();
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public HashMap<String, String> getShapeFields() {
         HashMap<String, String> fields = new HashMap<String, String>(){{
@@ -33,6 +47,10 @@ public class Pyramid extends Shape {
         return fields;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public HashMap<String, Double> getShapeData() {
         HashMap<String, Double> data = new HashMap<>();
@@ -43,6 +61,10 @@ public class Pyramid extends Shape {
         return data;
     }
 
+    /**
+     *
+     * @param shapeData
+     */
     @Override
     void setShapeData(HashMap<String, Double> shapeData) {
         this.baseWidth = shapeData.getOrDefault("baseWidth", 0.0);
@@ -50,6 +72,10 @@ public class Pyramid extends Shape {
         this.height = shapeData.getOrDefault("height", 0.0);
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public double calculateVolume() {
         return ((baseWidth * baseLength) * height) / 3.0;

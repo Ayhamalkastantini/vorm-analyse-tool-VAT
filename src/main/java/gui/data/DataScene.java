@@ -29,6 +29,10 @@ public class DataScene {
     private static FileChooser fileChooser;
     private static ToggleGroup toggleGroup;
 
+    /**
+     *
+     * @param type
+     */
     public void createDataWindow(String type) {
         window = new Stage();
 
@@ -81,6 +85,7 @@ public class DataScene {
         window.setScene(scene);
         window.showAndWait();
     }
+
 
     private static void save() {
         fileChooser = new FileChooser();
@@ -295,6 +300,11 @@ public class DataScene {
         }
     }
 
+    /**
+     *
+     * @param toggle
+     * @return
+     */
     private static ToggleGroup createToggleGroup(HBox toggle) {
         ToggleGroup toggleGroup = new ToggleGroup();
 

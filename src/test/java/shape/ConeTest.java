@@ -7,7 +7,9 @@ import java.util.HashMap;
 import static org.junit.Assert.assertEquals;
 
 public class ConeTest {
-
+    /**
+     * Test
+     */
     @Test
     void calculateVolume() {
         Cone cone = new Cone(4.0, 3.0);

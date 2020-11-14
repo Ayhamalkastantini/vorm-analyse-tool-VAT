@@ -42,6 +42,11 @@ public class Main extends Application {
     Shape previousSelectedShape = null;
     String previousSelectedItem = null;
 
+    /**
+     *
+     * @param primaryStage
+     * @throws Exception
+     */
     @Override
     public void start(Stage primaryStage) throws Exception{
         window = primaryStage;
@@ -63,6 +68,10 @@ public class Main extends Application {
         window.show();
     }
 
+    /**
+     *
+     * @return
+     */
     private GridPane createWindowGrid(){
         GridPane windowGrid = new GridPane();
         ColumnConstraints leftColumn = new ColumnConstraints();
@@ -175,6 +184,10 @@ public class Main extends Application {
 
     }
 
+    /**
+     *
+     * @return
+     */
     private MenuBar createMenu(){
         Menu fileMenu = new Menu("");
         Label t = new Label("Bestand");
@@ -226,6 +239,10 @@ public class Main extends Application {
         shapeList.getItems().addAll(shapes);
     }
 
+    /**
+     *
+     * @return
+     */
     private VBox createShapeTypeBox() {
         VBox shapeTypeBox = new VBox();
         Label shapeTypeLabel = new Label("Vorm aanmaken:");
@@ -250,8 +267,10 @@ public class Main extends Application {
     }
 
 
-
-
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         launch(args);
     }

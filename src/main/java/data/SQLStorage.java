@@ -18,7 +18,11 @@ public class SQLStorage {
     static final String USER = "root";
     static final String PASS = "";
 
-
+    /**
+     *
+     * @return
+     * @throws Exception
+     */
     private static Connection connect() throws Exception {
         Class.forName("org.mariadb.jdbc.Driver");
         return DriverManager.getConnection(
@@ -28,6 +32,14 @@ public class SQLStorage {
         );
     }
 
+    /**
+     *
+     * @param sql
+     * @param listId
+     * @param shape
+     * @return
+     * @throws Exception
+     */
     private PreparedStatement sqlInsertQueryBuilder(String sql, int listId, Shape shape) throws Exception {
         connection = connect();
         PreparedStatement stmt = connection.prepareStatement(
@@ -43,6 +55,13 @@ public class SQLStorage {
         return stmt;
     }
 
+    /**
+     *
+     * @param sql
+     * @param listId
+     * @return
+     * @throws Exception
+     */
     private ResultSet sqlSelectQueryBuilder(String sql, int listId) throws Exception {
         connection = connect();
 
@@ -51,6 +70,14 @@ public class SQLStorage {
 
         return sqlCone.executeQuery();
     }
+
+    /**
+     *
+     * @param shapes
+     * @param listName
+     * @return
+     * @throws Exception
+     */
     public boolean saveList(ArrayList<Shape> shapes, String listName) throws Exception {
         try{
             connection = connect();
@@ -95,6 +122,10 @@ public class SQLStorage {
         return false;
     }
 
+    /**
+     *
+     * @return
+     */
     public static boolean checkConnection() {
         try {
             connect();
@@ -104,6 +135,11 @@ public class SQLStorage {
         }
     }
 
+    /**
+     *
+     * @return
+     * @throws Exception
+     */
     public ObservableList<ShapeList> loadLists() throws Exception {
         connection = connect();
 
@@ -126,6 +162,12 @@ public class SQLStorage {
         return data;
     }
 
+    /**
+     *
+     * @param listId
+     * @return
+     * @throws Exception
+     */
     public ArrayList<Shape> loadShapesList(int listId) throws Exception {
         connection = connect();
 

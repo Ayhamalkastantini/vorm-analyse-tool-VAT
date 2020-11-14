@@ -12,18 +12,15 @@ import java.io.FileWriter;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
+/**
+ * The type Text storage.
+ */
 public class TextStorage implements StorageInterface {
 
-    /**
-     * Shape List Type
-     */
     private Type shapeList = new TypeToken<ArrayList<Shape>>() {
     }.getType();
 
 
-    /**
-     * Deserializer for the JSON file
-     */
     private JsonDeserializer<ArrayList<Shape>> deserializer = (json, typeOfT, context) -> {
         ArrayList<Shape> shapes = new ArrayList<Shape>();
         JsonArray jsonArray = (JsonArray) json;
@@ -53,6 +50,12 @@ public class TextStorage implements StorageInterface {
         return shapes;
     };
 
+    /**
+     *
+     * @param location
+     * @return
+     * @throws Exception
+     */
     public ArrayList<Shape> loadData(String location) throws Exception {
         FileReader fileReader = new FileReader(location);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -72,6 +75,12 @@ public class TextStorage implements StorageInterface {
         return customGson.fromJson(file.toString(), shapeList);
     }
 
+    /**
+     *
+     * @param location
+     * @param shapes
+     * @throws Exception
+     */
     public void saveData(String location, ArrayList<Shape> shapes) throws Exception {
         String json = new Gson().toJson(shapes);
         FileWriter fileWriter = new FileWriter(location);
